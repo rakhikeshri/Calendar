@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+// // way 1 for finding leap year --------------------------------------
+// // function isLeapYear(year) {
+// //   // Check if the year is evenly divisible by 4
+// //   if (year % 4 === 0) {
+// //     // If the year is divisible by 100, check if it's also divisible by 400
+// //     if (year % 100 === 0) {
+// //       if (year % 400 === 0) {
+// //         return true; // Divisible by 400, so it's a leap year
+// //       } else {
+// //         return false; // Divisible by 100 but not by 400, not a leap year
+// //       }
+// //     } else {
+// //       return true; // Divisible by 4 but not by 100, so it's a leap year
+// //     }
+// //   } else {
+// //     return false; // Not divisible by 4, not a leap year
+// //   }
+// // }
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+// // // Example usage
+// // const year = 2024;
+// // if (isLeapYear(year)) {
+// //   console.log(year + " is a leap year.");
+// // } else {
+// //   console.log(year + " is not a leap year.");
+// // }
 
-## Available Scripts
+// // way 2 for finding leap year -----------------------------------------
+// // let leap_year_or_not;
+// // const lear_year = (year) => {
+// //   if(year % 4 === 0 && year % 100 != 0){
+// //     leap_year_or_not = year + ' is a leap year'
+// //   }else if(year % 100 === 0 && year % 4 === 0 && year % 400 === 0){
+// //     leap_year_or_not = year + ' is a leap year'
+// //   }else{
+// //     leap_year_or_not = year + ' is not a leap year'
+// //   }
 
-In the project directory, you can run:
+// //   return leap_year_or_not
+// // }
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+// /* lear_year(current_date.getFullYear()) === true ? "true" : "false"} <br /> */
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+// function App() {
+//   const [year, setYear] = useState(null);
+//   const [isLeapYear, setIsLeapYear] = useState(false);
 
-### `npm test`
+//   //finding leap year
+//   let current_year;
+//   const leap_year = (year) => {
+//     if (year % 4 === 0 && year % 100 !== 0) {
+//       return true;
+//     } else if (year % 100 === 0 && year % 4 === 0 && year % 400 === 0) {
+//       return true;
+//     } else {
+//       return false;
+//     }
+//   };
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+//   useEffect(() => {
+//     current_year = new Date().getFullYear();
+//     setYear(current_year);
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+//     if (leap_year(current_year)) {
+//       setIsLeapYear(true);
+//     } else {
+//       setIsLeapYear(false);
+//     }
+//   }, []);
